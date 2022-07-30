@@ -1,0 +1,11 @@
+.search-bar {
+  background-color: red;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-bar-input {
+  background-color: white;
+  border-radius: 2px;
+}
