@@ -21,6 +21,7 @@ const PropertyCard = ({ property }) => {
     country,
     image,
   } = property;
+  //TODO :- Add real image links in backend
   return (
     <div className="property-card">
       <Card sx={{ maxWidth: 345 }}>
@@ -30,6 +31,7 @@ const PropertyCard = ({ property }) => {
           image="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt="green iguana"
         />
+
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
             $<span>{monthlyRent}</span> /month
@@ -63,7 +65,7 @@ const PropertyCard = ({ property }) => {
             Bathrooms {bathrooms}
           </Typography>
           <Typography variant="body2" color="text.secondary" component="p">
-            Dimensions {dimensionsInMeters}
+            location {location}
           </Typography>
         </CardActions>
       </Card>
