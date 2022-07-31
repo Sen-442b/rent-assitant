@@ -1,11 +1,22 @@
 .search-bar {
-  background-color: red;
+  background-color: rgb(167, 167, 167);
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .search-bar-input {
-  background-color: white;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
   border-radius: 2px;
+  font-size: 1rem;
+  height: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .search-bar {
+    flex-direction: column;
+  }
 }

@@ -13,9 +13,14 @@ const SearchBar = () => {
   const { customSearch } = filter;
   return (
     <div class="search-bar">
-      <h2>Search For Properties</h2>
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
+      <label htmlFor="search-bar">
+        <h2>Rent It Up</h2>
+      </label>
+
+      <input
+        type="search"
+        name="search-bar"
+        id="search-bar"
         placeholder="Search For Property"
         className="search-bar-input"
         value={customSearch}
@@ -28,6 +33,21 @@ const SearchBar = () => {
           )
         }
       />
+
+      {/* <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search For Property"
+        className="search-bar-input"
+        value={customSearch}
+        onChange={(e) =>
+          dispatch(
+            updateFilterAction({
+              filterType: "customSearch",
+              value: e.target.value,
+            })
+          )
+        }
+      /> */}
     </div>
   );
 };
