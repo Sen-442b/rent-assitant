@@ -5,6 +5,13 @@ const initialState = {
   isLoading: false,
   message: "",
   hasError: false,
+  filter: {
+    location: "",
+    date: "",
+    priceRange: "",
+    propertyType: "",
+    customSearch: "",
+  },
 };
 
 const getPropertyDetailsAction = createAsyncThunk(
@@ -33,6 +40,13 @@ const propertyDetailsSlice = createSlice({
       state.hasError = false;
       state.message = "";
     },
+    updateFilterAction: (state, action) => {
+      const { filterType, value } = action.payload;
+      state.filter[filterType] = value;
+    },
+    clearAllFiltersAction: (state) => {
+      state.filter = initialState.filter;
+    },
   },
   extraReducers: {
     [getPropertyDetailsAction.pending]: (state) => {
@@ -51,9 +65,12 @@ const propertyDetailsSlice = createSlice({
   },
 });
 const propertyDetailsSliceReducer = propertyDetailsSlice.reducer;
-const { resetFlagsAction } = propertyDetailsSlice.actions;
+const { resetFlagsAction, updateFilterAction, clearAllFiltersAction } =
+  propertyDetailsSlice.actions;
 export {
   getPropertyDetailsAction,
   resetFlagsAction,
   propertyDetailsSliceReducer,
+  updateFilterAction,
+  clearAllFiltersAction,
 };
