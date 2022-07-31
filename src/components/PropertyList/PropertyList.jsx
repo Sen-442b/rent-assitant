@@ -1,3 +1,4 @@
+import { Skeleton } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPropertyDetailsAction } from "../../redux/features/propertyDetailsSlice";
@@ -11,7 +12,8 @@ const PropertyList = () => {
   useEffect(() => {
     dispatch(getPropertyDetailsAction());
   }, []);
-  const { propertyDetailsArr, filter } = propertyDetails;
+  const { propertyDetailsArr, isLoading, filter, message, hasError } =
+    propertyDetails;
   const { location, date, priceRange, propertyType, customSearch } = filter;
   const removeWhiteSpace = (inputStr) => {
     let outputStr = "";
@@ -118,6 +120,32 @@ const PropertyList = () => {
   const searchedData = getSearchedData(propertyDetailsArr, customSearch);
 
   */
+
+  if (isLoading) {
+    return (
+      <div className="property-list">
+        {[1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 10].map(() => (
+          <Skeleton
+            sx={{ bgcolor: "grey.900" }}
+            variant="rectangular"
+            width={300}
+            height={300}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (hasError) {
+    return (
+      <div style={{ display: "grid", placeItems: "center" }}>
+        <p>Error</p>
+        {message.toString()}
+        <p>Please Try Again Later</p>
+      </div>
+    );
+  }
+
   return (
     <div className="property-list">
       {filteredData.map((property) => {
@@ -128,7 +156,3 @@ const PropertyList = () => {
 };
 
 export default PropertyList;
-
-//TODO
-//SOLVE THE DATE FILTER PART
-// CLEAR FILTER FUNCTIONALITY

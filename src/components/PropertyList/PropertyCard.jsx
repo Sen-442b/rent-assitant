@@ -53,8 +53,18 @@ const PropertyCard = ({ property }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Typography variant="body2" color="text.secondary" component="p">
+            Beds {beds}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" component="p">
+            Dimensions {dimensionsInMeters}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" component="p">
+            Bathrooms {bathrooms}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" component="p">
+            Dimensions {dimensionsInMeters}
+          </Typography>
         </CardActions>
       </Card>
     </div>

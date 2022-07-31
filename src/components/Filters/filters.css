@@ -1,4 +1,7 @@
 .filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .visibility-visible {
@@ -7,4 +10,10 @@
 
 .visibility-hidden {
   visibility: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .filters {
+    flex-direction: column;
+  }
 }
