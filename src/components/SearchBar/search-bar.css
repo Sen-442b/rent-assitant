@@ -14,9 +14,3 @@
   font-size: 1rem;
   height: 2rem;
 }
-
-@media only screen and (max-width: 767px) {
-  .search-bar {
-    flex-direction: column;
-  }
-}
