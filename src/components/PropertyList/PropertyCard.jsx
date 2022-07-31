@@ -34,9 +34,14 @@ const PropertyCard = ({ property }) => {
 
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
-            $<span>{monthlyRent}</span> /month
+            $<span>{monthlyRent}</span>/month
           </Typography>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            className="capitalize"
+          >
             {propertyName}
           </Typography>
           <Typography
@@ -50,6 +55,7 @@ const PropertyCard = ({ property }) => {
             variant="body2"
             color="text.secondary"
             component="address"
+            className="capitalize"
           >
             {location}
           </Typography>
@@ -65,7 +71,7 @@ const PropertyCard = ({ property }) => {
             Bathrooms {bathrooms}
           </Typography>
           <Typography variant="body2" color="text.secondary" component="p">
-            location {location}
+            Property Type {propertyType}
           </Typography>
         </CardActions>
       </Card>
